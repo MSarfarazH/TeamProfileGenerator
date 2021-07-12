@@ -7,6 +7,7 @@ const HTMLGenerator = require('./src/HTMLGenerator');
 const managerArray = []
 const engineerArray = []
 const internArray = []
+const teamArray = []
 
 console.log(HTMLGenerator)
 function EngQs() {
