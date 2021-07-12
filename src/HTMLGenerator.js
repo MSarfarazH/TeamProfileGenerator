@@ -40,8 +40,6 @@ const GenerateIntern = () => {
   </div>`
 }
 
-HTMLGenerator = (teamMemberArray) => {
-    teamMemberArray = [];
-}
+
 
 
