@@ -4,6 +4,9 @@ const Engineer = require("./lib/Engineer.js");
 const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const HTMLGenerator = require('./src/HTMLGenerator');
+const managerArray = []
+const engineerArray = []
+const internArray = []
 
 console.log(HTMLGenerator)
 function EngQs() {
@@ -16,6 +19,19 @@ function EngQs() {
     .then(function (input) {
       // console.log(input)
       const Eng = new Engineer(input.name, input.ID, input.email, input.github);
+      let engCard = (
+        `\n
+                <div class="card">
+                <div id="cardhead">
+                <h1>${input.name}</h1>
+                <h2>Manager</h2>
+                </div>
+                <p>ID: ${input.ID}</p>
+                <a href="mailto:address"> ${input.email}</a>
+                <p>office number: ${input.github}</p>
+                </div>`
+      );
+      
       console.log(Eng);
       start()
     });
@@ -82,4 +98,5 @@ function start() {
       //  writeToFile('./dist/index.html', HTMLGenerator(input));
     });
 }
+
 start();
