@@ -41,5 +41,4 @@ const GenerateIntern = () => {
 }
 
 
-
-
+module.exports = 'HTMLGenerator.js';

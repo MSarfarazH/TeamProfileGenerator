@@ -18,13 +18,12 @@ function EngQs() {
       // console.log(input)
       const Eng = new Engineer(input.name, input.ID, input.email, input.github);
       teamArray.push(Eng)
-      console.log(Eng);
       start()
     });
-}
-
-function ManQs() {
-  inquirer.prompt([
+  }
+  
+  function ManQs() {
+    inquirer.prompt([
       { type: "input", name: "name", message: "What is their name?" },
       { type: "input", name: "ID", message: "What is their ID?" },
       { type: "input", name: "email", message: "What is their E-mail?" },
@@ -34,34 +33,33 @@ function ManQs() {
       // console.log(input)
       const Man = new Manager(input.name, input.ID, input.email, input.officenum);
       teamArray.push(Man)
-      console.log(Man);
+      console.log(teamArray)
       start()
     });
 }
 
 function IntQs() {
-  inquirer.prompt([
+  inquirer
+    .prompt([
       { type: "input", name: "name", message: "What is their name?" },
       { type: "input", name: "ID", message: "What is their ID?" },
       { type: "input", name: "email", message: "What is their E-mail?" },
-      { type: "input", name: "school", message: "What is their school name?",
-      },
+      { type: "input", name: "school", message: "What is their school name?" },
     ])
     .then(function (input) {
       // console.log(input)
       const Int = new Intern(input.name, input.ID, input.email, input.school);
-      teamArray.push(Int)
-      console.log(Int);
-      start()
+      teamArray.push(Int);
+      start();
     });
-} 
+}
 
 function writeToFile(input) {
   fs.writeFile(input, (err) => {
     if (err) throw err;
     console.log("The Readme file is created");
   });
-};
+}
 
 function start() {
   inquirer
@@ -84,9 +82,11 @@ function start() {
         IntQs();
       }
       if (input.role === "Exit") {
-        HTMLGenerator(teamArray)
+        fs.writeFile("index.html", HTMLGenerator(input), function (err) {
+          if (err) throw err;
+          console.log("Saved!");
+        });
       }
-      //  writeToFile('./dist/index.html', HTMLGenerator(input));
     });
 }
 
