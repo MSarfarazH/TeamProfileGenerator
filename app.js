@@ -5,6 +5,11 @@ const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const HTMLGenerator = require('./src/HTMLGenerator');
 const teamArray = []
+const engArray = []
+const manArray = []
+const intArray = []
+
+
 
 console.log(HTMLGenerator)
 function EngQs() {
@@ -17,7 +22,7 @@ function EngQs() {
     .then(function (input) {
       // console.log(input)
       const Eng = new Engineer(input.name, input.ID, input.email, input.github);
-      teamArray.push(Eng)
+      engArray.push(Eng)
       start()
     });
   }
@@ -32,7 +37,7 @@ function EngQs() {
     .then(function (input) {
       // console.log(input)
       const Man = new Manager(input.name, input.ID, input.email, input.officenum);
-      teamArray.push(Man)
+      manArray.push(Man)
       console.log(teamArray)
       start()
     });
@@ -49,9 +54,14 @@ function IntQs() {
     .then(function (input) {
       // console.log(input)
       const Int = new Intern(input.name, input.ID, input.email, input.school);
-      teamArray.push(Int);
+      intArray.push(Int);
       start();
     });
+}
+
+function HTMLGenerator () {
+  GenerateManager(manArray)
+  console.log(GenerateManager(manArray))
 }
 
 function writeToFile(input) {
