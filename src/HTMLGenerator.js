@@ -1,6 +1,6 @@
 
 const GenerateManager = (input) => {
-   return `<div class="card" style="width: 18rem;">
+   return `<div class="card m-1 border-1 border-dark" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${input.name}</h5>
       <h5 class="card-title">Manager</h5>
@@ -14,7 +14,7 @@ const GenerateManager = (input) => {
 }
 
 const GenerateEngineer = (input) => {
-   return `<div class="card" style="width: 18rem;">
+   return `<div class="card m-1 border-1 border-dark" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${input.name}</h5>
       <h5 class="card-title">Engineer</h5>
@@ -28,7 +28,7 @@ const GenerateEngineer = (input) => {
 }
 
 const GenerateIntern = (input) => {
-   return `<div class="card" style="width: 18rem;">
+   return `<div class="card m-1 border-1 border-dark" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${input.name}</h5>
       <h5 class="card-title">Intern</h5>
